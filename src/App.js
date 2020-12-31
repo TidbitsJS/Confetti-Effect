@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import AOS from "aos";
 import { useWindowSize } from "react-use";
 import Confetti from "react-confetti";
 
+import "aos/dist/aos.css";
 import "./App.css";
 
 const drawStar = (ctx) => {
@@ -24,7 +26,16 @@ const drawStar = (ctx) => {
 
 const App = () => {
   const [party, setParty] = useState(false);
+  const [newYear, setNewYear] = useState(false);
   const { width, height } = useWindowSize();
+
+  useEffect(() => {
+    AOS.init({
+      duration: 2000,
+    });
+
+    AOS.refresh();
+  }, []);
 
   return (
     <div
@@ -55,14 +66,29 @@ const App = () => {
         }}
       />
       <h1 className="new-year">
-        <span className="happy">Happy</span>
-        <span className="new">New</span>
-        <span className="year">Year</span>
-        <span className="year2021">2021</span>
+        {newYear ? (
+          <>
+            <span className="happy" data-aos="fade-up">
+              Happy
+            </span>
+            <span className="new" data-aos="zoom-out-right">
+              New
+            </span>
+            <span className="year" data-aos="zoom-in">
+              Year
+            </span>
+            <span className="year2021" data-aos="fade-down">
+              2021
+            </span>
+          </>
+        ) : null}
       </h1>
       <img
         src="https://img.icons8.com/emoji/96/000000/-emoji-ribbon.png"
-        onClick={() => setParty(!party)}
+        onClick={() => {
+          setParty(!party);
+          setNewYear(true);
+        }}
         alt="ribbon"
         className="ribbon"
       />
