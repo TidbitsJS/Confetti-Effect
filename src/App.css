@@ -38,3 +38,10 @@ body {
   color: #1fc3ec;
 }
 /* #f1c83c; #2b9f5e; #e55643*/
+
+.made-with {
+  position: absolute;
+  bottom: 5%;
+  font-size: 1.1rem;
+  user-select: none;
+}

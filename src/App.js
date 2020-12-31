@@ -33,6 +33,7 @@ const App = () => {
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "column",
+        position: "relative",
         width: width,
         height: height,
       }}
@@ -71,6 +72,9 @@ const App = () => {
         numberOfPieces={200}
         // drawShape={drawStar}
       />
+      <div className="made-with">
+        <p>Made with ❤️ ~ Sujata</p>
+      </div>
     </div>
   );
 };
