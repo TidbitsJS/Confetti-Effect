@@ -68,16 +68,16 @@ const App = () => {
       <h1 className="new-year">
         {newYear ? (
           <>
-            <span className="happy" data-aos="fade-up">
+            <span className="happy" data-aos="flip-left">
               Happy
             </span>
-            <span className="new" data-aos="zoom-out-right">
+            <span className="new" data-aos="fade-up-right">
               New
             </span>
-            <span className="year" data-aos="zoom-in">
+            <span className="year" data-aos="flip-left">
               Year
             </span>
-            <span className="year2021" data-aos="fade-down">
+            <span className="year2021" data-aos="zoom-in">
               2021
             </span>
           </>
