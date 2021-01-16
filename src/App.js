@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import AOS from "aos";
+import "./Animations/letteranimation";
+import "./Animations/cssanimation.min.css";
 import { useWindowSize } from "react-use";
 import Confetti from "react-confetti";
 
@@ -65,21 +67,13 @@ const App = () => {
           y: height / 2,
         }}
       />
-      <h1 className="new-year">
+      <h1 className="new-year cssanimation sequence effect3d lePushReleaseFrom">
         {newYear ? (
           <>
-            <span className="happy" data-aos="flip-left">
-              Happy
-            </span>
-            <span className="new" data-aos="fade-up-right">
-              New
-            </span>
-            <span className="year" data-aos="flip-left">
-              Year
-            </span>
-            <span className="year2021" data-aos="zoom-in">
-              2021
-            </span>
+            <span className="happy">Happy</span>
+            <span className="new">New</span>
+            <span className="year">Year</span>
+            <span className="year2021">2021</span>
           </>
         ) : null}
       </h1>
